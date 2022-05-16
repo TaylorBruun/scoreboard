@@ -1,6 +1,23 @@
-
+:root{
+    --scoreColor: rgba(100, 150, 150, .5)
+}
 
 .bg-img{
-    background-image: ;
+    background-image: url(./img/bg-tennis.jpg);
+    background-position: 50% 40%;
+        
+}
+
+.actual-scoreboard{
+    background-color: var(--scoreColor);
+    min-width: 40vw;   
+    min-height: 30vh;
+}
+
+
+.score-display{
+background-color: var(--scoreColor);
+min-width: 15vw;   
+    min-height: 10vh;
     
 }
