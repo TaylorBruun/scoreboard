@@ -1,93 +1,108 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Scoreboard</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS v5.0.2 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
 
     <style>
         body.debug .container,
         body.debug .container-fluid {
-          outline: 2px double blue;
-          outline-offset: -2px;
+            outline: 2px double blue;
+            outline-offset: -2px;
         }
-    
-        body.debug .row {
-          outline: 2px dashed red;
-          min-height: 5vh;
-          outline-offset: -2px;
-        }
-    
-        body.debug [class*="col-"] {
-          outline: 2px dotted limegreen;
-          outline-offset: -3px;
-        }
-      </style>
-    
-  </head>
-  <body class="bg-img container-fluid">
-      <!-- Main Row 1 -->
-    <div class="row">
-        <div class="col text-end">
-            <button onclick="reset()" class="p-3 m-3 btn btn-warning">Reset</button>
-        </div>
-    </div>
 
-    <!-- Main Row 2 -->
-    <div class="d-flex row">
-        <div class="col">
-            <h1 class="text-center text-light display-1">Score</h1>
-            <div class="actual-scoreboard shadow ">
-                <div class="row  text-center">
-                    <div class="col-md-6 align-items-center">
-                        <div class="score-display m-5">
-                            <h3 id="scoreP1"></h3>
+        body.debug .row {
+            outline: 2px dashed red;
+            min-height: 5vh;
+            outline-offset: -2px;
+        }
+
+        body.debug [class*="col-"] {
+            outline: 2px dotted limegreen;
+            outline-offset: -3px;
+        }
+    </style>
+
+</head>
+
+<body class="">
+    <div class="bg-img">
+    <main class="container-fluid">
+
+        <!-- Main Row 1 -->
+        <div class="row">
+            <div class="col text-end">
+                <button onclick="reset()" class="p-3 m-3 btn btn-warning">Reset</button>
+            </div>
+        </div>
+
+        <!-- Main Row 2 -->
+        <div class="align-text-middle row">
+            <div class="col">
+                <h1 class="text-center text-light display-1">Score</h1>
+                <div class="actual-scoreboard shadow">
+                    <div class="row text-light align-items-center text-center">
+                        <div class="col-md-6">
+                            <div class="score-display p-4 shadow m-5">
+                                <h3 class="pt-3" id="scoreP1"></h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 align-items-center">
-                        <div class="score-display m-5">
-                            <h3 id="scoreP2"></h3>
+                        <div class="col-md-6">
+                            <div class="score-display p-4 shadow m-5">
+                                <h3 class="pt-3" id="scoreP2" class=""></h3>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Main Row 3 -->
-    <div class="row text-center">
-        <div class="col-md-6">
-            <button onclick="addP1Score()" class="text-center p-3 m-1 btn btn-primary">P1 Point</button>
-            <button onclick="subP1Score()" class="text-center p-3 m-1 btn btn-light">Subtract P1 Point</button>
-            <button onclick="resetP1()" class="text-center p-3 m-1 btn btn-warning">Reset P1</button>
+        <!-- Main Row 3 -->
+        <div class="row text-center">
+            <div class="col-md-6">
+                <button onclick="addP1Score()" class="text-center p-3 m-1 btn btn-primary">P1 Point</button>
+                <button onclick="subP1Score()" class="text-center p-3 m-1 btn btn-light">Subtract P1 Point</button>
+                <button onclick="resetP1()" class="text-center p-3 m-1 btn btn-warning">Reset P1</button>
+            </div>
+            <div class="col-md-6">
+                <button onclick="addP2Score()" class="text-center p-3 m-1 btn btn-primary">P2 Point</button>
+                <button onclick="subP2Score()" class="text-center p-3 m-1 btn btn-light">Subtract P2 Point</button>
+                <button onclick="resetP2()" class="text-center p-3 m-1 btn btn-warning">Reset P2</button>
+            </div>
         </div>
-        <div class="col-md-6">
-            <button onclick="addP2Score()" class="text-center p-3 m-1 btn btn-primary">P2 Point</button>
-            <button onclick="subP2Score()" class="text-center p-3 m-1 btn btn-light">Subtract P2 Point</button>
-            <button onclick="resetP2()" class="text-center p-3 m-1 btn btn-warning">Reset P2</button>
+
+        <!-- Main Row 4 -->
+        <div class="row text-center">
+            <div class="col">
+                <button onclick="enterTiebreak()" class="text-center p-3 mt-5 m-1 btn btn-dark text-light">Tiebreak
+                    Mode</button>
+            </div>
         </div>
+
+
+
+
+
+        <script src="main.js"></script>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+
+    </main>
     </div>
-    
-    <!-- Main Row 4 -->
-    <div class="row text-center">
-        <div class="col">
-            <button onclick="enterTiebreak()" class="text-center p-3 mt-5 m-1 btn btn-dark text-light">Tiebreak Mode</button>
-        </div>
-    </div>
+</body>
 
-
-
-
-
-    <script src="main.js"></script>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-  </body>
 </html>

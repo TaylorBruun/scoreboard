@@ -1,10 +1,15 @@
 :root{
-    --scoreColor: rgba(100, 150, 150, .5)
+    --scoreColor: rgba(80, 80, 180, .6)
+}
+
+body{
+    min-height: 100vh;
 }
 
 .bg-img{
     background-image: url(./img/bg-tennis.jpg);
     background-position: 50% 40%;
+    min-height: 100vh;
         
 }
 
@@ -18,6 +23,7 @@
 .score-display{
 background-color: var(--scoreColor);
 min-width: 15vw;   
-    min-height: 10vh;
+min-height: 10vh;
     
+       
 }
