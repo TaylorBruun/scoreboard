@@ -48,6 +48,7 @@ function addP1Score() {
 }
 
 function addP2Score() {
+    if(tieMode == 0){
     if (p2Score == 0 || p2Score == 15) {
         p2Score += 15
     }
@@ -71,6 +72,17 @@ function addP2Score() {
     }
     drawP1Score()
     drawP2Score()
+}
+else{
+    if((p2Score == 7) && (p2Score > (p1Score + 1))){
+        p2Score = "Win!"
+        drawP2Score()
+    }
+    else{
+        p2Score ++
+        drawP2Score()
+    }
+}
 }
 
 function subP1Score() {
